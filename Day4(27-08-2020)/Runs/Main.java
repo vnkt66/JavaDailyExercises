@@ -13,7 +13,8 @@ class Main {
     }
     System.out.println("Enter the over number");
     Integer overNumber = sc.nextInt();
-    System.out.println("Runs scored in this over : " + runs[overNumber - 1]);
+    Integer runsScored = runs[overNumber - 1];
+    System.out.println("Runs scored in this over : " + runsScored);
 } catch(Exception e) {
    System.out.println(e);   
 }
