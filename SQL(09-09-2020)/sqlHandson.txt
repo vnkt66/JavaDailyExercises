@@ -26,13 +26,13 @@ create table PROGRAMMER (
 /* b) */
 
 INSERT INTO PROGRAMMER(EmpNo,LastName,FirstName,Hiredate,ProjId,Language, TaskNo, Privilege)
-VALUES (201,'Gupta','Saurav',1/1/95,'NPR','VB',52,'Secret'),
-       (390,'Ghosh','Pinky',1/05/93,'KCW','Java',11,'Top Secret'),
-       (789,'Agarwal','Praveen',08/31/98,'Rnc','VB',11,'Secret'),
-       (134,'Chaudhury','Supriyo',07/15/95,'TIPPS','C++',10,'Secret'),
-       (896,'Jha','Ranjit',06/15/97,'KCW','Java',10,'Top Secret'),
-       (345,'John','Peter',11/15/99,'TIPPS','Java',52,null),
-       (363,'Anderson','Andy',08/15/94,'NITTS','C++',89,'confidential');
+VALUES (201,'Gupta','Saurav','1995-01-01','NPR','VB',52,'Secret'),
+       (390,'Ghosh','Pinky','1993-01-05','KCW','Java',11,'Top Secret'),
+       (789,'Agarwal','Praveen','1998-08-31','Rnc','VB',11,'Secret'),
+       (134,'Chaudhury','Supriyo','1995-07-15','TIPPS','C++',10,'Secret'),
+       (896,'Jha','Ranjit','1997-06-15','KCW','Java',10,'Top Secret'),
+       (345,'John','Peter','1999-11-15','TIPPS','Java',52,null),
+       (363,'Anderson','Andy','1994-08-15','NITTS','C++',89,'confidential');
 
 /* c) */
 
