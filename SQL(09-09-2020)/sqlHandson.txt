@@ -1,0 +1,236 @@
+/*
+
+Note: disable the safe mode for updating to make updation work
+
+*/
+
+
+create database sqlhandson;
+
+use sqlhandson;
+
+
+/* a) */
+
+create table PROGRAMMER (
+  EmpNo numeric(5) unique, 
+  ProjId varchar(5), 
+  LastName varchar(30) not null,  
+  FirstName varchar(30),  
+  HireDate Date,  
+  Language varchar(15),  
+  TaskNo numeric(2),
+  Privilege varchar(25)
+);
+
+/* b) */
+
+INSERT INTO PROGRAMMER(EmpNo,LastName,FirstName,Hiredate,ProjId,Language, TaskNo, Privilege)
+VALUES (201,'Gupta','Saurav',1/1/95,'NPR','VB',52,'Secret'),
+       (390,'Ghosh','Pinky',1/05/93,'KCW','Java',11,'Top Secret'),
+       (789,'Agarwal','Praveen',08/31/98,'Rnc','VB',11,'Secret'),
+       (134,'Chaudhury','Supriyo',07/15/95,'TIPPS','C++',10,'Secret'),
+       (896,'Jha','Ranjit',06/15/97,'KCW','Java',10,'Top Secret'),
+       (345,'John','Peter',11/15/99,'TIPPS','Java',52,null),
+       (363,'Anderson','Andy',08/15/94,'NITTS','C++',89,'confidential');
+
+/* c) */
+
+create table WEATHER (
+  City varchar(30), 
+  State varchar(30),   
+  High numeric(5),
+  Low numeric(2) 
+);
+
+INSERT INTO WEATHER
+VALUES ('Calcutta','West Bengal', 105, 90);
+
+INSERT INTO WEATHER(City, State, High, Low)
+VALUES ('Trivandrum','Kerala', 101, 92);
+
+INSERT INTO WEATHER(City, State, High, Low)
+VALUES ('Mumbai','Maharashtra', 88, 69),
+       ('Bangalore','Karnataka', 77, 60),
+       ('New Delhi', null,80, 72);
+
+/* d) */
+
+create table BOOKS (
+  BookId numeric(5) not null, 
+  Title varchar(20), 
+  TopicId varchar(20) not null,  
+  PublisherName varchar(50), 
+  PlaceofPublication varchar(10), 
+  Price numeric(5),
+  PurchaseDate Date,  
+  ShelfNo varchar(3),
+  CONSTRAINT book_id PRIMARY KEY(BookId) 
+);
+
+INSERT INTO BOOKS(BookId,Title,TopicId,PublisherName,PlaceofPublication,Price,PurchaseDate,ShelfNo)
+VALUES (8293,'DBMS','DB1','Prentice Hall','Mumbai',255,'1995-01-01','S11'),
+       (5645,'DBMS','DB1','Pearson Education','Mumbai',655,'1993-01-05','S12'),
+       (6565,'C','C1','TMH','Mumbai',840,'1998-08-31','S66'),
+       (6567,'C++','Cplus1','ABC Publishers','Delhi',300,'1995-07-15','S77'),
+       (4576,'JAVA','JAVA1','Guru Govind Publications','Delhi',500,'1997-06-15','S87'),
+       (3433,'OOPS','OOPS1','Dave Publishers','Pune',600,'1999-11-15','S56'),
+       (4655,'SAD','SAD1','Sajan Publications','Cochin',700,'1994-08-15','S76');
+
+
+/* e) */
+
+/* 1 */
+UPDATE PROGRAMMER
+SET ProjId = 'NITTS',Language='C++'
+WHERE FirstName = 'Saurav' and LastName = 'Gupta';
+
+/* 2 */ 
+UPDATE BOOKS
+SET ShelfNo = 'S10'
+WHERE Title = 'DBMS';
+
+/* 3 */
+DELETE FROM PROGRAMMER
+WHERE FirstName = 'Supriyo' and LastName = 'Chaudhury';
+
+/* 4 */
+ALTER TABLE WEATHER
+ADD snow varchar(10);
+
+/* 5 */
+DROP TABLE WEATHER;
+
+
+
+/* f) */
+
+
+
+create table SUPPLIER (
+  SUPPLIERID integer, 
+  SNAME varchar(30), 
+  SCITY varchar(30),  
+  SPHONE bigint not null,
+  EMAIL varchar(50) unique,
+  CONSTRAINT supp_id PRIMARY KEY (SUPPLIERID)
+);
+
+INSERT INTO SUPPLIER
+VALUES (1,'Dilip','Chennai',8999900000,'dilip@abc.co.in'),
+       (2,'Tarun','Madurai', 8999911111, 'tarun@xyz.com'),
+       (3,'Naresh','Coimbatore',8999922222,'g.naresh@xyzl.com'),
+       (4,'Ganesan','Trichy',8999933333,'Ganesan 83@ijk.com');
+
+
+
+create table CUSTOMER (
+  CUSTID integer, 
+  FNAME varchar(30), 
+  LNAME varchar(30),  
+  ADDRESS varchar(50), 
+  PHONENO bigint not null,
+  CITY varchar(20),
+  COUNTRY varchar(20), 
+  DATEFIRSTPURCHASED Date,
+  SUPPLIERID integer,  
+  CONSTRAINT cust_id PRIMARY KEY (CUSTID),
+  CONSTRAINT supp_id FOREIGN KEY (SUPPLIERID) REFERENCES SUPPLIER (SUPPLIERID)
+);
+
+INSERT INTO CUSTOMER
+VALUES (1001,'Das','Jeyaseelan','119, park Avenue, II street', 9841093428, 'Coimbatore', 'India', '2004-01-10', 1),
+       (2001,'Gopi','Govindraj','241, I floor, Kamaraj street, Madippakkam', 9444124590, 'Chennai', 'India', '2005-03-25', 4),
+       (1201,'Dilip','Kishore','43, II Avenue, Anna Nagar', 9997234534, 'Bangalore', 'India', '2004-08-20', 2),
+       (1300,'Aanand','Chowdhury','42/1 sector 1, II Street', 9841054348, 'Bangalore', 'India', '2005-05-15', 2),
+       (1220,'Chandra','Nagarajan','83, lal bagh', 98410672356, 'Bangalore', 'India', '2006-12-12', 4),
+       (1221,'Abhishek','Kumar','13, kishori park', 94447623901, 'Chennai', 'India', '2004-05-15', 1),
+       (1320,'Nikhil','Pandit','218, alwaanya street,', 94448923091, 'Salem', 'India', '2006-04-21', 3),
+       (1222,'Meenu','Monica','C11, church road', 98410563421, 'Trichy', 'India', '2004-08-30', 1),
+       (1225,'Pavan','Kumar','128/A, North Mada Street', 99934782103, 'madurai', 'India', '2004-08-18', 4);
+
+
+create table ITEMS (
+  ITEMID integer, 
+  ITEMNAME varchar(35) not null, 
+  SUPPLIERID integer,  
+  MINQTY integer not null,
+  MAXQTY integer not null,
+  Price numeric(5,2),
+  CONSTRAINT item_id PRIMARY KEY (ITEMID),
+  CONSTRAINT fk_supp_id 
+    FOREIGN KEY (SUPPLIERID) 
+    REFERENCES SUPPLIER(SUPPLIERID)
+); 
+
+INSERT INTO ITEMS
+VALUES (20,'Pears Soap',4,7,20,30.00),
+       (21,'V.V.D. Coconut oil 200 ml',2,8,15,79.00),
+       (22,'Ponds powder 400g',3,6,25,106.00),
+       (23,'Reynolds pen- blue',1,10,30,15.00),
+       (24,'Reynolds pen- blue',1,10,30,16.00),
+       (25,'Mysore sandal soap',4,7,25,25.00),
+       (26,'Fair & lovely cream-50g',3,5,15,55.00),
+       (27,'Rexono deo spray',2,5,20,100.00),
+       (28,'Dove soap',4,7,15,85.00);
+       
+       
+
+create table ORDERS (
+  ORDERID integer, 
+  ORDERDATE Date, 
+  CUSTID integer,  
+  QUANTITY integer,
+  ITEMID integer,
+  CONSTRAINT quantity CHECK(Quantity>0),
+  CONSTRAINT order_id PRIMARY KEY (ORDERID),
+  CONSTRAINT fk_cust_id 
+    FOREIGN KEY (CUSTID) 
+    REFERENCES CUSTOMER(CUSTID),
+  CONSTRAINT fk_item_id 
+    FOREIGN KEY (ITEMID) 
+    REFERENCES ITEMS(ITEMID) 
+); 
+
+INSERT INTO ORDERS
+VALUES (1,'2004-01-12',1001,30,25),
+       (2,'2005-05-06',1201,38,24),
+       (3,'2006-12-16',1220,10,22),
+       (4,'2004-05-21',1222,12,21);
+
+/* g) */
+
+/* 6 */
+select * from customer where city = 'Chennai';
+
+/* 7 */
+select * from customer where supplierid = 2;
+
+/* 8 */
+select custid,fname,lname from customer where datefirstpurchased > '2005-01-01';
+
+/* 9 */
+select * from supplier where scity = 'Coimbatore'; 
+
+/* 10 */
+select * from supplier where sname like 'G%';
+
+/* 11 */
+select * from customer where lname not like '%e%';
+
+/* 12 */
+select * from customer where datefirstpurchased like '2006%' order by datefirstpurchased desc;
+
+/* 13 */
+select * from orders where quantity < 35; 
+
+/* 14 */
+select * from items where supplierid = 4;
+
+/* 15 */
+select * from items where supplierid = 3 and minqty > 7 order by itemid asc;
+
+
+
+       
+
