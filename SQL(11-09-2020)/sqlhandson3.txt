@@ -1,0 +1,13 @@
+/* using sqlhandson database */
+use sqlhandson;
+
+/* 1 */
+select fname, city, country from customer where city in ('Chennai', 'Salem', 'Madurai');
+
+/* 2  using equi join*/
+select c.custid as custid, c.fname as fname, c.lname as lname, c.datefirstpurchased as datefirstpurchased, i.itemname as item, i.price as price from customer c, orders o, items i where o.custid = c.custid and o.itemid = i.itemid;
+/* 2  using inner join*/
+select c.custid as custid, c.fname as fname, c.lname as lname, c.datefirstpurchased as datefirstpurchased, i.itemname as item, i.price as price from customer c inner join orders o inner join items i on o.custid = c.custid and o.itemid = i.itemid;
+
+/* 3 */
+select * from orders where itemid = (select itemid from items where itemname = 'dove soap');
