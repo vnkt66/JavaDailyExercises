@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+      }
+      th {
+        padding: 0 50px 20px 50px;
+      }
+      td {
+        padding: 0 50px;
+        text-align: center;
+      }
+      .last {
+        content: none;
+        padding: 0 50px 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <th>Planet Name</th>
+        <th>Year Length</th>
+        <th>Day Length</th>
+      </tr>
+      <tr>
+        <td>Mercury</td>
+        <td>88 days</td>
+        <td>59 days</td>
+      </tr>
+      <tr>
+        <td>Venus</td>
+        <td>225 days</td>
+        <td>243 days</td>
+      </tr>
+      <tr>
+        <td>Earth</td>
+        <td>365 days</td>
+        <td>24 hrs</td>
+      </tr>
+      <tr>
+        <td>Mars</td>
+        <td>765 days</td>
+        <td>24.6 hrs</td>
+      </tr>
+      <tr>
+        <td class="last"></td>
+        <td class="last"></td>
+        <td class="last"></td>
+      </tr>
+    </table>
+  </body>
+</html>

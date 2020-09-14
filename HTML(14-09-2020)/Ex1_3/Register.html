@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+  </head>
+
+  <body>
+    <form method="POST" action="./HomePage.html">
+      <label for="userid">User Id</label>
+      <input
+        type="text"
+        name="userid"
+        id="userid"
+        placeholder="Enter your user id"
+      /><br />
+      <label for="firstname">First Name</label>
+      <input
+        type="text"
+        name="firstname"
+        id="firstname"
+        placeholder="Enter your First Name"
+      /><br />
+      <label for="lastname">Last Name</label>
+      <input
+        type="text"
+        name="lastname"
+        id="lastname"
+        placeholder="Enter your Last Name"
+      /><br />
+      <label for="address">Address</label>
+      <textarea id="address">Enter your address</textarea><br />
+      <label for="country">Country</label>
+      <select name="country" id="country">
+        <option value="india">India</option>
+        <option value="usa">USA</option>
+        <option value="germany">Germany</option></select
+      ><br />
+      <label for="phone">Phone</label>
+      <input
+        type="text"
+        name="phone"
+        id="phone"
+        placeholder="Enter your phone number"
+      /><br />
+      <label for="zip">Zip Code</label>
+      <input
+        type="text"
+        id="zip"
+        name="zipcode"
+        placeholder="Enter your zipcode"
+      /><br />
+      <label for="male">Male</label>
+      <input type="radio" id="male" name="gender" value="Male" />
+      <label for="female">Female</label>
+      <input type="radio" id="female" name="gender" value="Female" />
+      <input type="submit" name="submit" />
+      <input type="reset" name="reset" value="Reset" /><br />
+    </form>
+  </body>
+</html>

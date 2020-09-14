@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add AddressBook</title>
+  </head>
+
+  <body>
+    <form method="POST" action="./Submitted.html">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="Name"
+        id="name"
+        placeholder="Enter your name"
+      /><br />
+      <label for="address">Address</label>
+      <textarea id="address">Enter your address</textarea><br />
+      <label for="city">City</label>
+      <input
+        type="text"
+        name="City"
+        id="city"
+        placeholder="Enter your city"
+      /><br />
+      <label for="postalcode">Postal Code</label>
+      <select name="postalCode" id="postalcode">
+        <option value="600048">Vandalur</option>
+        <option value="523262">Maddiralapadu</option>
+        <option value="5230002">Ongole</option></select
+      ><br />
+      <label for="bus">Bus</label>
+      <input type="radio" id="bus" name="transportMode" value="Bus" />
+      <label for="car">Car</label>
+      <input type="radio" id="car" checked name="transportMode" value="Car" />
+      <label for="cycle">Cycle</label>
+      <input type="radio" id="cycle" name="transportMode" value="Cycle" />
+      <label for="other">Other</label>
+      <input type="radio" id="other" name="transportMode" value="Other" /><br />
+      <label for="html">HTML</label>
+      <input type="checkbox" id="html" name="Skillset1" value="HTML" /><br />
+      <label for="css">CSS</label>
+      <input type="checkbox" id="css" name="Skillset2" value="CSS" /><br />
+      <label for="js">javaScript</label>
+      <input
+        type="checkbox"
+        checked
+        id="js"
+        name="Skillset3"
+        value="JS"
+      /><br />
+      <label for="email">Email</label>
+      <input type="text" name="Email" placeholder="Enter your email" /><br />
+      <label for="about">About Yourself</label>
+      <input
+        type="text"
+        name="About_Yourself"
+        placeholder="Summary about yourself"
+      /><br />
+      <input type="submit" value="Register" />
+      <input type="reset" value="Reset" /><br />
+    </form>
+  </body>
+</html>
