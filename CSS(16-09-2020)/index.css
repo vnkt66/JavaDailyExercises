@@ -2,8 +2,10 @@ body {
   background-image: url("./image.jpeg");
   background-size: contain;
   text-align: center;
-  margin: 0;
   height: 100%;
+}
+.section {
+  width: 100%;
 }
 h1 {
   /* border: 2px solid brown; */
