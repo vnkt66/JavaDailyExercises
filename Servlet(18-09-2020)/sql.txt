@@ -1,0 +1,27 @@
+create database PetRegistration;
+
+use PetRegistration;
+
+create table PetRegistration (
+  FirstName varchar(30), 
+  LastName varchar(30), 
+  Address varchar(60),  
+  EmailId varchar(30), 
+  City varchar(20), 
+  State varchar(20),
+  PetName varchar(30),
+  PhoneNumber numeric(10),  
+  PetType varchar(10),
+  Age numeric(2)
+);
+
+create table Login (
+LoginId varchar(30),
+Password varchar(30)
+);
+
+insert into Login values
+           ("venkanna", "1234v"),
+           ("raju", "6789v");
+           
+select * from Login;

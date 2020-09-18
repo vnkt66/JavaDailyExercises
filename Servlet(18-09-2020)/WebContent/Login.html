@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+<form method="post" action="http://localhost:9090/JdbcServlet/LoginServlet">
+<div class="row" >
+<div class="col-12">
+<label for="login">Login ID</label>
+</div>
+<div class="col-md-6">
+<input type="text" class="form-control" id="login" name="login" />
+</div>
+</div>
+<div class="row" >
+<div class="col-12">
+<label for="pass">Password</label>
+</div>
+<div class="col-md-6">
+<input type="password" class="form-control" id="pass" name="pass" />
+</div>
+</div>
+<div class="row mt-2">
+    <div class="col">
+      <button type="submit" style="width: 80px; text-align: center; " class="btn btn-primary">SignIn</button>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col">
+      <button class="btn btn-primary" type="button" style="width: 80px; text-align: center; ">LogOut</button>
+    </div>
+  </div>
+</form>
+</div>
+</body>
+</html>
