@@ -1,0 +1,38 @@
+@charset "utf-8";
+.sidebar {
+	width: 30%;
+  background-color: #cbcbcc1f;
+  position: absolute;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  /* text-decoration: none; */
+}
+
+/* .sidebar a.active {
+  background-color: gray;
+  color: white;
+}
+
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+} */
+
+h4 {
+	font-size: 40px;
+	padding: 20px 0 0 0;
+}
+div.content {
+  margin-left: 250px;
+}

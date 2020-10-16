@@ -1,0 +1,42 @@
+@charset "utf-8";
+.sidebar {
+	width: 250px;
+  background-color: #cbcbcc1f;
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  /* text-decoration: none; */
+}
+
+/* .sidebar a.active {
+  background-color: gray;
+  color: white;
+}
+
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+} */
+
+div.content {
+  margin-left: 250px;
+  padding: 1px 16px;
+}
+
+.ams {
+	margin-bottom: 45px;
+}
+.lorem {
+	font-size: 20px;
+}
